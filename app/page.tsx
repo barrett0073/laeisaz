@@ -417,6 +417,7 @@ export default function Home() {
                       className="object-contain"
                       sizes="(max-width: 768px) 100vw, 33vw"
                       loading="lazy"
+                      unoptimized={true}
                     />
                   </motion.div>
                   <h3 className="text-2xl font-bold text-laeisaz-title mb-4">{capability.title[language]}</h3>
@@ -743,6 +744,7 @@ export default function Home() {
                             fill
                             className="object-contain p-4 sm:p-5 rounded-full group-hover:scale-110 transition-transform duration-500"
                             sizes="(max-width: 768px) 80px, (max-width: 1024px) 96px, 112px"
+                            unoptimized={true}
                           />
                         </div>
                         {/* Glow effect on hover */}

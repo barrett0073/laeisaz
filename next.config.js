@@ -37,12 +37,16 @@ const nextConfig = {
     NEXT_PUBLIC_ADMIN_USERNAME: process.env.ADMIN_USERNAME,
     NEXT_PUBLIC_ADMIN_PASSWORD: process.env.ADMIN_PASSWORD,
   },
-  // Static file serving for storage
+  // Static file serving for storage and icons
   async rewrites() {
     return [
       {
         source: '/storage/:path*',
         destination: '/api/storage/:path*',
+      },
+      {
+        source: '/icon/:path*',
+        destination: '/api/icon/:path*',
       },
     ];
   },
