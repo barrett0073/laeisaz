@@ -411,7 +411,7 @@ export default function Home() {
                     }}
                   >
                     <Image
-                      src={`/icon/${index === 0 ? 'افتخارات.jpg' : index === 1 ? 'درباره ما.jpg' : 'نمایشگاه‌ها.jpg'}`}
+                      src={`/icon/${encodeURIComponent(index === 0 ? 'افتخارات.jpg' : index === 1 ? 'درباره ما.jpg' : 'نمایشگاه‌ها.jpg')}`}
                       alt={capability.title[language]}
                       fill
                       className="object-contain"
@@ -738,7 +738,7 @@ export default function Home() {
                       <div className="relative w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full p-[3px] bg-gradient-to-br from-laeisaz-title/40 via-laeisaz-title/20 to-transparent shadow-lg group-hover:shadow-2xl transition-all duration-500">
                         <div className="relative w-full h-full rounded-full bg-white flex items-center justify-center shadow-[0_8px_30px_rgba(3,54,102,0.12)] group-hover:shadow-[0_20px_40px_rgba(3,54,102,0.15)] transition-all duration-500">
                           <Image
-                            src={`/icon/${app.id}.jpg`}
+                            src={`/icon/${encodeURIComponent(app.id)}.jpg`}
                             alt={app.title[language]}
                             fill
                             className="object-contain p-4 sm:p-5 rounded-full group-hover:scale-110 transition-transform duration-500"

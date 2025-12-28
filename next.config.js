@@ -23,8 +23,6 @@ const nextConfig = {
         hostname: '127.0.0.1',
       },
     ],
-    // Allow local storage images
-    domains: ['localhost'],
   },
   // Performance optimizations
   productionBrowserSourceMaps: false,

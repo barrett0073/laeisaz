@@ -14,16 +14,42 @@ export async function GET(request: Request) {
       return NextResponse.json({ country: 'unknown' });
     }
 
-    // Use ip-api.com to get country information
-    const response = await fetch(`http://ip-api.com/json/${ip}`);
-    const data = await response.json();
+    // Use ip-api.com to get country information with timeout
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
+    
+    try {
+      const response = await fetch(`https://ip-api.com/json/${ip}`, {
+        signal: controller.signal,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (response.ok) {
+        const data = await response.json();
+        return NextResponse.json({ 
+          country: data.country || 'unknown',
+          countryCode: data.countryCode || 'unknown'
+        });
+      }
+    } catch (fetchError) {
+      clearTimeout(timeoutId);
+      // If it's a timeout or abort, return unknown
+      if (fetchError instanceof Error && fetchError.name === 'AbortError') {
+        return NextResponse.json({ country: 'unknown' });
+      }
+      throw fetchError;
+    }
 
-    return NextResponse.json({ 
-      country: data.country || 'unknown',
-      countryCode: data.countryCode || 'unknown'
-    });
+    return NextResponse.json({ country: 'unknown' });
   } catch (error) {
-    console.error('Error detecting country:', error);
+    // Only log non-timeout errors
+    if (error instanceof Error && error.name !== 'AbortError') {
+      console.error('Error detecting country:', error);
+    }
     return NextResponse.json({ country: 'unknown' });
   }
 } 

@@ -31,16 +31,33 @@ export async function middleware(request: NextRequest) {
   // If we have an IP, try to detect the country
   if (ip) {
     try {
-      // Use ip-api.com to get country information
-      const response = await fetch(`http://ip-api.com/json/${ip}`);
-      const data = await response.json();
+      // Use ip-api.com to get country information with timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 2000); // 2 second timeout
       
-      // If the country is Iran, set language to Farsi
-      if (data.countryCode === 'IR') {
-        language = 'fa';
+      const response = await fetch(`https://ip-api.com/json/${ip}`, {
+        signal: controller.signal,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (response.ok) {
+        const data = await response.json();
+        
+        // If the country is Iran, set language to Farsi
+        if (data.countryCode === 'IR') {
+          language = 'fa';
+        }
       }
     } catch (error) {
-      console.error('Error detecting country:', error);
+      // Silently fail - default to English
+      // Only log if it's not an abort error
+      if (error instanceof Error && error.name !== 'AbortError') {
+        console.error('Error detecting country:', error);
+      }
     }
   }
 
