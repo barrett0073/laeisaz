@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "technical": "Technical Information",
+    "contact": "Contact Us"
+  },
+  "home": {
+    "welcome": "Welcome to Our Website",
+    "description": "Your trusted partner in quality products"
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn more about our company and values"
+  },
+  "products": {
+    "title": "Our Products",
+    "description": "Explore our range of products"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Get in touch with our team"
+  }
+} 
