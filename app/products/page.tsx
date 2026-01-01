@@ -93,7 +93,6 @@ export default function Products() {
       thermobonding: { en: 'Thermobonding', fa: 'ترموباندینگ' },
       laminated: { en: 'Laminated', fa: 'لایی لمینت' },
       synthetic: { en: 'Synthetic', fa: 'لایی سنتتیک' },
-      'fusible-interfacing': { en: 'Fusible Interfacing', fa: 'لایی چسب سوزنی' },
     },
     sortOptions: {
       name: { en: 'Name', fa: 'نام' },
@@ -269,28 +268,6 @@ export default function Products() {
       features: {
         en: ['High Resistance', 'Superior Formability', 'Double-Sided', 'No Lint & Odor'],
         fa: ['مقاومت بالا', 'فرم‌پذیری برتر', 'دو رو', 'بدون پرز و بو']
-      }
-    },
-    {
-      id: 'fusible-interfacing',
-      name: {
-        en: 'Fusible Interfacing',
-        fa: 'لایی چسب سوزنی'
-      },
-      description: {
-        en: 'Specialized needle-punched fusible interfacing for clothing and embroidery applications with excellent fabric compatibility.',
-        fa: 'لایی چسب سوزنی تخصصی برای کاربردهای پوشاک و گلدوزی با سازگاری عالی با پارچه'
-      },
-      image: '/images/products/fusible-interfacing.jpg',
-      href: '/products/fusible-interfacing',
-      productCount: 1,
-      applications: {
-        en: ['Clothing Industry', 'Embroidery', 'Doll Production', 'Garment Manufacturing'],
-        fa: ['صنعت پوشاک', 'گلدوزی', 'تولید عروسک', 'تولید پوشاک']
-      },
-      features: {
-        en: ['Strength & Shaping', 'Fabric Compatibility', 'Smooth Surface', 'Embroidery Ready'],
-        fa: ['استحکام و فرم‌دهی', 'سازگاری با پارچه', 'سطح صاف', 'آماده گلدوزی']
       }
     }
   ]
