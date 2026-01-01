@@ -207,7 +207,7 @@ export default function ThermoFuse() {
             <AnimateOnScroll className="delay-200">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/products/thermo-fuse-main.jpg"
+                  src="/images/products/thermo-fuse.jpg"
                   alt={translations.hero.title[language]}
                   fill
                   className="object-cover"

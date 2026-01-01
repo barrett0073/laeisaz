@@ -164,7 +164,7 @@ export default function Thermobonding() {
 
   const images = [
     {
-      src: '/images/products/thermobonding/1.jpg',
+      src: '/images/products/thermobonding.jpg',
       alt: 'Thermobonding Product 1',
       title: translations.gallery.images[0].title[language]
     },

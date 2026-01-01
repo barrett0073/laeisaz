@@ -292,7 +292,7 @@ export default function NeedlePunchedFelt() {
             <AnimateOnScroll className="delay-200">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/products/needle-punched-felt/main.jpg"
+                  src="/images/products/needle.jpg"
                   alt="Needle Punched Felt Material"
                   fill
                   className="object-cover"
