@@ -1,11 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import AnimateOnScroll from '../../components/AnimateOnScroll'
 import { useLanguage } from '../../components/ClientLayout'
 
 export default function Interlining() {
   const { language } = useLanguage();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const translations = {
     hero: {
@@ -24,24 +27,16 @@ export default function Interlining() {
         fa: 'معرفی محصول'
       },
       description: {
-        en: 'Our interlining products provide superior support and stability to fabrics, enhancing their drape and durability.',
-        fa: 'محصولات لایی چسب ما پشتیبانی و پایداری برتر به پارچه‌ها ارائه می‌دهند و باعث بهبود آویز و دوام آنها می‌شوند.'
+        en: 'Adhesive interlining is produced in two types: paper-based and fabric-based, and depending on the type, it is used in various industries such as textiles, clothing, embroidery, shoe manufacturing, and other industrial products. This group of products is offered in various models.',
+        fa: 'لایی چسب‌ در دو نوع کاغذی و پارچه‌ای تولید می‌شود و بسته به نوع، در صنایع مختلفی مانند نساجی، پوشاک، گلدوزی، تولید کفش و سایر محصولات صنعتی کاربرد دارد. این گروه از محصولات در مدل‌های متنوعی عرضه می‌شود.'
       },
-      points: {
-        en: [
-          'Excellent fabric support',
-          'Enhanced durability',
-          'Improved drape',
-          'Easy application',
-          'Wide range of weights'
-        ],
-        fa: [
-          'پشتیبانی عالی از پارچه',
-          'دوام بهبود یافته',
-          'آویز بهتر',
-          'کاربرد آسان',
-          'محدوده گسترده وزن‌ها'
-        ]
+      readMore: {
+        en: 'Read More',
+        fa: 'بیشتر بخوانید'
+      },
+      readLess: {
+        en: 'Read Less',
+        fa: 'کمتر بخوانید'
       }
     },
     features: {
@@ -159,23 +154,54 @@ export default function Interlining() {
       {/* Product Overview */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <AnimateOnScroll>
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-laeisaz-title">
                   {translations.overview.title[language]}
                 </h2>
-                <p className="text-laeisaz-text">
-                  {translations.overview.description[language]}
-                </p>
-                <ul className="space-y-3">
-                  {translations.overview.points[language].map((point, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-laeisaz-title mr-2">•</span>
-                      <span className="text-laeisaz-text">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: isExpanded ? 'auto' : '6rem',
+                      opacity: 1
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.4, 0, 0.2, 1]
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-laeisaz-text whitespace-pre-line">
+                      {translations.overview.description[language]}
+                    </p>
+                  </motion.div>
+                  <motion.button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="mt-3 text-laeisaz-title hover:text-laeisaz-frame font-semibold transition-colors duration-200 flex items-center gap-1"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={isExpanded ? 'less' : 'more'}
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {isExpanded ? translations.overview.readLess[language] : translations.overview.readMore[language]}
+                      </motion.span>
+                    </AnimatePresence>
+                    <motion.span
+                      animate={{ rotate: isExpanded ? 180 : 0 }}
+                      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                    >
+                      ↓
+                    </motion.span>
+                  </motion.button>
+                </div>
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll className="delay-200">

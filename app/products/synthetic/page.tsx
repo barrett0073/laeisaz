@@ -4,22 +4,22 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimateOnScroll from '../../components/AnimateOnScroll'
-import { FaFire, FaIndustry, FaChartLine, FaCheck } from 'react-icons/fa'
+import { FaIndustry, FaCogs, FaChartLine } from 'react-icons/fa'
 import { useLanguage } from '../../components/ClientLayout'
 
-export default function Thermobonding() {
+export default function Synthetic() {
   const { language } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const translations = {
     hero: {
       title: {
-        en: 'Thermobonding Materials',
-        fa: 'مواد ترموباندینگ'
+        en: 'Synthetic Felt',
+        fa: 'لایی سنتتیک'
       },
       description: {
-        en: 'High-performance thermally bonded nonwoven materials for demanding industrial applications',
-        fa: 'مواد نبافته ترموباندینگ با عملکرد بالا برای کاربردهای صنعتی چالش‌برانگیز'
+        en: 'Advanced synthetic felt with high resistance, softness, and superior formability',
+        fa: 'نمد پیشرفته سنتتیک با مقاومت بالا، نرمی و فرم‌پذیری برتر'
       }
     },
     overview: {
@@ -28,8 +28,8 @@ export default function Thermobonding() {
         fa: 'معرفی محصول'
       },
       description: {
-        en: 'It is considered one of the important subcategories in the nonwoven textiles industry, produced using polypropylene or polyester fibers. Depending on customer needs, this product has the capability to undergo supplementary operations such as coating and impregnation. Thermobond felts have wide applications in various industries in different grammages.',
-        fa: 'از زیرمجموعه‌های مهم در صنعت منسوجات نبافته محسوب می‌شود که با استفاده از الیاف پلی‌پروپیلن یا پلی‌استر تولید می‌گردد. این محصول بسته به نیاز مشتری، قابلیت انجام عملیات تکمیلی نظیر کوتینگ (Coating)  و آغشته‌سازی را دارد. لایی ترموباند در گرماژهای مختلف، کاربرد گسترده‌ای در صنایع گوناگون دارد'
+        en: 'A type of advanced felt with high resistance, greater softness and formability compared to Venidon. This felt can be used in the manufacture of military shoes, high-safety shoes, and sometimes in the production of the inner back layer of sandals. Other features of this felt include high tensile resistance against tearing, appropriate abrasion resistance, double-sided nature which makes it suitable for producing seamless bags, absence of lint and odor with permanent sizing, and high flexibility.',
+        fa: 'نوعی نمد پیشرفته با مقاومت بالا، نرمی و فرم‌پذیری بیشتر نسبت به ونیدون. این لایی در ساخت کفش‌های نظامی، کفش‌های با ایمنی بالا و بعضا در تولید پشت لایه داخلی صندل قابل استفاده است. از ویژگی‌های دیگر این لایی می‌توان به مقاومت کششی بالا در برابر پارگی، مقاومت سایشی مناسب، دو رو بودن لایی که برای تولید کیف‌های یکپارچه مناسب است، نداشتن پرز و بو با آهار دائمی و انعطاف‌پذیری بالا اشاره کرد.'
       },
       readMore: {
         en: 'Read More',
@@ -48,32 +48,32 @@ export default function Thermobonding() {
       items: [
         {
           title: {
-            en: 'Superior Bonding',
-            fa: 'پیوند برتر'
+            en: 'High Resistance',
+            fa: 'مقاومت بالا'
           },
           description: {
-            en: 'Advanced thermal bonding technology ensures exceptional material integrity',
-            fa: 'فناوری پیشرفته پیوند حرارتی یکپارچگی استثنایی مواد را تضمین می‌کند'
+            en: 'Superior resistance and durability compared to traditional felts',
+            fa: 'مقاومت و دوام برتر نسبت به نمدهای سنتی'
           }
         },
         {
           title: {
-            en: 'Versatile Applications',
-            fa: 'کاربردهای متنوع'
+            en: 'Superior Formability',
+            fa: 'فرم‌پذیری برتر'
           },
           description: {
-            en: 'Suitable for various industrial applications including automotive and construction',
-            fa: 'مناسب برای کاربردهای مختلف صنعتی از جمله خودرو و ساختمان'
+            en: 'Greater softness and formability for various applications',
+            fa: 'نرمی و فرم‌پذیری بیشتر برای کاربردهای مختلف'
           }
         },
         {
           title: {
-            en: 'High Performance',
-            fa: 'عملکرد بالا'
+            en: 'Double-Sided',
+            fa: 'دو رو'
           },
           description: {
-            en: 'Excellent dimensional stability and mechanical properties',
-            fa: 'پایداری ابعادی و خواص مکانیکی عالی'
+            en: 'Double-sided nature suitable for seamless bag production',
+            fa: 'دو رو بودن مناسب برای تولید کیف‌های یکپارچه'
           }
         }
       ]
@@ -86,104 +86,81 @@ export default function Thermobonding() {
       items: [
         {
           label: {
-            en: 'Weight Range',
-            fa: 'محدوده وزن'
+            en: 'Material Type',
+            fa: 'نوع مواد'
           },
-          value: '30-500 g/m²'
+          value: 'Synthetic Felt'
         },
         {
           label: {
-            en: 'Width',
-            fa: 'عرض'
-          },
-          value: 'Up to 3.2 meters'
-        },
-        {
-          label: {
-            en: 'Temperature Resistance',
-            fa: 'مقاومت در برابر دما'
-          },
-          value: '-40°C to +150°C'
-        },
-        {
-          label: {
-            en: 'Bonding Strength',
-            fa: 'استحکام پیوند'
+            en: 'Tensile Resistance',
+            fa: 'مقاومت کششی'
           },
           value: 'High'
         },
         {
           label: {
-            en: 'Color Options',
-            fa: 'گزینه‌های رنگ'
+            en: 'Abrasion Resistance',
+            fa: 'مقاومت سایشی'
           },
-          value: 'Customizable'
+          value: 'Excellent'
         },
         {
           label: {
-            en: 'Material Composition',
-            fa: 'ترکیب مواد'
+            en: 'Flexibility',
+            fa: 'انعطاف‌پذیری'
           },
-          value: 'Synthetic Fibers'
+          value: 'High'
+        },
+        {
+          label: {
+            en: 'Surface Type',
+            fa: 'نوع سطح'
+          },
+          value: 'Double-Sided'
+        },
+        {
+          label: {
+            en: 'Lint & Odor',
+            fa: 'پرز و بو'
+          },
+          value: 'None'
         }
       ]
     },
-    gallery: {
+    applications: {
       title: {
-        en: 'Product Gallery',
-        fa: 'گالری محصول'
+        en: 'Applications',
+        fa: 'کاربردها'
       },
-      images: [
+      items: [
         {
-          title: {
-            en: 'High-Performance Material',
-            fa: 'ماده با عملکرد بالا'
-          }
+          en: 'Military Shoes',
+          fa: 'کفش‌های نظامی'
         },
         {
-          title: {
-            en: 'Industrial Application',
-            fa: 'کاربرد صنعتی'
-          }
+          en: 'Safety Shoes',
+          fa: 'کفش‌های ایمنی'
         },
         {
-          title: {
-            en: 'Quality Testing',
-            fa: 'آزمایش کیفیت'
-          }
+          en: 'Sandals',
+          fa: 'صندل‌ها'
         },
         {
-          title: {
-            en: 'Manufacturing Process',
-            fa: 'فرآیند تولید'
-          }
+          en: 'Seamless Bags',
+          fa: 'کیف‌های یکپارچه'
+        },
+        {
+          en: 'Footwear Manufacturing',
+          fa: 'تولید کفش'
+        },
+        {
+          en: 'Industrial Applications',
+          fa: 'کاربردهای صنعتی'
         }
       ]
     }
   };
-
-  const images = [
-    {
-      src: '/images/products/thermobonding/1.jpg',
-      alt: 'Thermobonding Product 1',
-      title: translations.gallery.images[0].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/2.jpg',
-      alt: 'Thermobonding Product 2',
-      title: translations.gallery.images[1].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/3.jpg',
-      alt: 'Thermobonding Product 3',
-      title: translations.gallery.images[2].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/4.jpg',
-      alt: 'Thermobonding Product 4',
-      title: translations.gallery.images[3].title[language]
-    }
-  ]
 
   return (
     <div className="bg-laeisaz-background">
@@ -260,8 +237,8 @@ export default function Thermobonding() {
             <AnimateOnScroll className="delay-200">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/products/thermobonding/main.jpg"
-                  alt="Thermobonding Material"
+                  src="/images/products/synthetic-felt.jpg"
+                  alt="Synthetic Felt Material"
                   fill
                   className="object-cover"
                 />
@@ -284,8 +261,8 @@ export default function Thermobonding() {
               <AnimateOnScroll key={index} className={`delay-${(index + 1) * 200}`}>
                 <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                   <div className="text-4xl mb-4 text-laeisaz-title flex justify-center">
-                    <FaFire className={index === 0 ? 'block' : 'hidden'} />
-                    <FaIndustry className={index === 1 ? 'block' : 'hidden'} />
+                    <FaIndustry className={index === 0 ? 'block' : 'hidden'} />
+                    <FaCogs className={index === 1 ? 'block' : 'hidden'} />
                     <FaChartLine className={index === 2 ? 'block' : 'hidden'} />
                   </div>
                   <h3 className="text-xl font-bold text-laeisaz-title mb-4">{feature.title[language]}</h3>
@@ -321,6 +298,27 @@ export default function Thermobonding() {
           </div>
         </div>
       </section>
+
+      {/* Applications */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimateOnScroll>
+            <h2 className="text-3xl font-bold text-laeisaz-title text-center mb-16">
+              {translations.applications.title[language]}
+            </h2>
+          </AnimateOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {translations.applications.items.map((application, index) => (
+              <AnimateOnScroll key={index} className={`delay-${index * 100}`}>
+                <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                  <h3 className="text-xl font-bold text-laeisaz-title">{application[language]}</h3>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
-} 
+}
+

@@ -1,11 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import AnimateOnScroll from '../../components/AnimateOnScroll'
 import { useLanguage } from '../../components/ClientLayout'
 
 export default function ThermoFuse() {
   const { language } = useLanguage();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const translations = {
     hero: {
@@ -24,24 +27,16 @@ export default function ThermoFuse() {
         fa: 'معرفی محصول'
       },
       description: {
-        en: 'Our thermo fuse products provide reliable thermal protection for various applications, ensuring safety and performance.',
-        fa: 'محصولات ترمو فیوز ما محافظت حرارتی قابل اعتماد برای کاربردهای مختلف ارائه می‌دهند و ایمنی و عملکرد را تضمین می‌کنند.'
+        en: 'Thermo fuse felts or padded felts (puffy felts) are produced in grammages from 50 to 600 grams per square meter and up to a width of 2350 millimeters. This group of products includes various models such as Swan thermo fuse, Royal thermo fuse, Asa thermo fuse, and Star thermo fuse, which depending on the type, are used in various industries such as clothing, bedding, quilts and sleeping bags, quilting, industrial filters, and other specialized applications. Among the features of this category of felts, we can mention cost-effectiveness and economy, environmental compatibility, ability to produce from recycled fibers, having elastic and recovery properties, compatibility with various covers and surface layers, and reduction of dust and unpleasant odors.',
+        fa: 'لایی‌های ترموفیوز یا لایی پفکی (لایی پفی) در گرماژهای ۵۰ تا ۶۰۰ گرم بر مترمربع و تا عرض ۲۳۵۰ میلی‌متر تولید می‌شوند. این گروه از محصولات شامل مدل‌های متنوعی نظیر ترموفیوز قو، ترموفیوز رویال، ترموفیوز آسا و ترموفیوز استار است که بسته به نوع، در صنایع مختلفی همچون پوشاک، کالای خواب، لحاف و کیسه‌خواب، پنبه‌دوزی، فیلترهای صنعتی و سایر کاربردهای تخصصی مورد استفاده قرار می‌گیرند. از ویژگی‌های این دسته لایی‌ها می‌توان به مقرون به صرفه و اقتصادی بودن، سازگاری با محیط زیست، قابلیت تولید از الیاف بازیافتی، داشتن خاصیت ارتجاعی و برگشت پذیری، هماهنگی با انواع روکش‌ها و لایه‌های سطحی و کاهندگی گرد و غبار و بوهای نامطبوع اشاره کرد.'
       },
-      points: {
-        en: [
-          'Precise temperature control',
-          'Quick response time',
-          'High reliability',
-          'Easy installation',
-          'Wide temperature range'
-        ],
-        fa: [
-          'کنترل دقیق دما',
-          'زمان پاسخگویی سریع',
-          'قابلیت اطمینان بالا',
-          'نصب آسان',
-          'محدوده دمایی گسترده'
-        ]
+      readMore: {
+        en: 'Read More',
+        fa: 'بیشتر بخوانید'
+      },
+      readLess: {
+        en: 'Read Less',
+        fa: 'کمتر بخوانید'
       }
     },
     features: {
@@ -159,23 +154,54 @@ export default function ThermoFuse() {
       {/* Product Overview */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <AnimateOnScroll>
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-laeisaz-title">
                   {translations.overview.title[language]}
                 </h2>
-                <p className="text-laeisaz-text">
-                  {translations.overview.description[language]}
-                </p>
-                <ul className="space-y-3">
-                  {translations.overview.points[language].map((point, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-laeisaz-title mr-2">•</span>
-                      <span className="text-laeisaz-text">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: isExpanded ? 'auto' : '6rem',
+                      opacity: 1
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.4, 0, 0.2, 1]
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-laeisaz-text whitespace-pre-line">
+                      {translations.overview.description[language]}
+                    </p>
+                  </motion.div>
+                  <motion.button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="mt-3 text-laeisaz-title hover:text-laeisaz-frame font-semibold transition-colors duration-200 flex items-center gap-1"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={isExpanded ? 'less' : 'more'}
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {isExpanded ? translations.overview.readLess[language] : translations.overview.readMore[language]}
+                      </motion.span>
+                    </AnimatePresence>
+                    <motion.span
+                      animate={{ rotate: isExpanded ? 180 : 0 }}
+                      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                    >
+                      ↓
+                    </motion.span>
+                  </motion.button>
+                </div>
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll className="delay-200">

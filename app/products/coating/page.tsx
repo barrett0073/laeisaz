@@ -1,11 +1,14 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import AnimateOnScroll from '../../components/AnimateOnScroll'
 import { useLanguage } from '../../components/ClientLayout'
 
 export default function Coating() {
   const { language } = useLanguage();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const translations = {
     hero: {
@@ -24,24 +27,16 @@ export default function Coating() {
         fa: 'معرفی محصول'
       },
       description: {
-        en: 'Our coating products provide excellent surface protection and enhancement for various materials and applications.',
-        fa: 'محصولات لایی کوتینگ ما محافظت و بهبود سطح عالی برای مواد و کاربردهای مختلف ارائه می‌دهند.'
+        en: 'In coating operations, textiles can be immersed in polymeric materials in molten, liquid, and paste forms, or their surface can be impregnated. This is done to increase strength and prevent the passage of water (waterproof), dust, and aerobic bacteria through the textiles. Among the felts in this category, Venidon, Spilon, Sentilon, and Tek-Tex felts are used in the bag and shoe manufacturing industry.',
+        fa: 'در عملیات کوتینگ می‌توان منسوجات را در مواد پلیمری به صورت مذاب، مایع و خمیری شکل غوطه ور و یا سطح آن را آغشته کرد. اینکار برای افزایش استحکام و جلوگیری از عبور آب (واتر پروف)، گرد و غبار و باکتریهای هوازی از منسوجات می‌باشد. از میان لایی‌های این دسته لایی‌های ونیدون، اسپیلون، سنتیلون و تک‌تکس‌ها در صنعت تولید کیف و کفش کاربرد دارند.'
       },
-      points: {
-        en: [
-          'Superior surface protection',
-          'Enhanced durability',
-          'Chemical resistance',
-          'Easy application',
-          'Wide range of finishes'
-        ],
-        fa: [
-          'محافظت سطحی برتر',
-          'دوام بهبود یافته',
-          'مقاومت شیمیایی',
-          'کاربرد آسان',
-          'محدوده گسترده پرداخت‌ها'
-        ]
+      readMore: {
+        en: 'Read More',
+        fa: 'بیشتر بخوانید'
+      },
+      readLess: {
+        en: 'Read Less',
+        fa: 'کمتر بخوانید'
       }
     },
     features: {
@@ -159,23 +154,54 @@ export default function Coating() {
       {/* Product Overview */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <AnimateOnScroll>
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold text-laeisaz-title">
                   {translations.overview.title[language]}
                 </h2>
-                <p className="text-laeisaz-text">
-                  {translations.overview.description[language]}
-                </p>
-                <ul className="space-y-3">
-                  {translations.overview.points[language].map((point, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-laeisaz-title mr-2">•</span>
-                      <span className="text-laeisaz-text">{point}</span>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <motion.div
+                    initial={false}
+                    animate={{
+                      height: isExpanded ? 'auto' : '6rem',
+                      opacity: 1
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.4, 0, 0.2, 1]
+                    }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-laeisaz-text whitespace-pre-line">
+                      {translations.overview.description[language]}
+                    </p>
+                  </motion.div>
+                  <motion.button
+                    onClick={() => setIsExpanded(!isExpanded)}
+                    className="mt-3 text-laeisaz-title hover:text-laeisaz-frame font-semibold transition-colors duration-200 flex items-center gap-1"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={isExpanded ? 'less' : 'more'}
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        {isExpanded ? translations.overview.readLess[language] : translations.overview.readMore[language]}
+                      </motion.span>
+                    </AnimatePresence>
+                    <motion.span
+                      animate={{ rotate: isExpanded ? 180 : 0 }}
+                      transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+                    >
+                      ↓
+                    </motion.span>
+                  </motion.button>
+                </div>
               </div>
             </AnimateOnScroll>
             <AnimateOnScroll className="delay-200">

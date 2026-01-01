@@ -4,22 +4,22 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimateOnScroll from '../../components/AnimateOnScroll'
-import { FaFire, FaIndustry, FaChartLine, FaCheck } from 'react-icons/fa'
+import { FaIndustry, FaCogs, FaChartLine } from 'react-icons/fa'
 import { useLanguage } from '../../components/ClientLayout'
 
-export default function Thermobonding() {
+export default function FusibleInterfacing() {
   const { language } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const translations = {
     hero: {
       title: {
-        en: 'Thermobonding Materials',
-        fa: 'مواد ترموباندینگ'
+        en: 'Fusible Interfacing',
+        fa: 'لایی چسب سوزنی'
       },
       description: {
-        en: 'High-performance thermally bonded nonwoven materials for demanding industrial applications',
-        fa: 'مواد نبافته ترموباندینگ با عملکرد بالا برای کاربردهای صنعتی چالش‌برانگیز'
+        en: 'Specialized needle-punched fusible interfacing for clothing and embroidery applications',
+        fa: 'لایی چسب سوزنی تخصصی برای کاربردهای پوشاک و گلدوزی'
       }
     },
     overview: {
@@ -28,8 +28,8 @@ export default function Thermobonding() {
         fa: 'معرفی محصول'
       },
       description: {
-        en: 'It is considered one of the important subcategories in the nonwoven textiles industry, produced using polypropylene or polyester fibers. Depending on customer needs, this product has the capability to undergo supplementary operations such as coating and impregnation. Thermobond felts have wide applications in various industries in different grammages.',
-        fa: 'از زیرمجموعه‌های مهم در صنعت منسوجات نبافته محسوب می‌شود که با استفاده از الیاف پلی‌پروپیلن یا پلی‌استر تولید می‌گردد. این محصول بسته به نیاز مشتری، قابلیت انجام عملیات تکمیلی نظیر کوتینگ (Coating)  و آغشته‌سازی را دارد. لایی ترموباند در گرماژهای مختلف، کاربرد گسترده‌ای در صنایع گوناگون دارد'
+        en: 'Needle-punched fusible interfacings are specialized subcategories of fusible interfacing used in the clothing industry. These products provide strength while giving appropriate shaping to garments and are well-compatible with various fabrics in the sewing process. This interfacing is also used in the production of small dolls and embroidery, where by placing this interfacing, a smooth surface can be created to easily perform embroidery on it.',
+        fa: 'لایی چسب‌های سوزنی از زیرمجموعه‌های تخصصی لایی چسب هستند که در صنعت پوشاک مورد استفاده قرار می‌گیرند. این محصولات ضمن تأمین استحکام، فرم‌دهی مناسبی به لباس داده و در فرآیند دوخت به‌خوبی با انواع پارچه‌ها سازگار هستند. از این لایی همچنین در تولید عروسک‌های کوچک و گلدوزی نیز استفاده می‌شود به گونه‌ای که با قرارگیری این لایی می‌توانند سطح صافی ایجاد کنند تا بتوان به راحتی روی آن گلدوزی را انجام داد.'
       },
       readMore: {
         en: 'Read More',
@@ -48,32 +48,32 @@ export default function Thermobonding() {
       items: [
         {
           title: {
-            en: 'Superior Bonding',
-            fa: 'پیوند برتر'
+            en: 'Strength & Shaping',
+            fa: 'استحکام و فرم‌دهی'
           },
           description: {
-            en: 'Advanced thermal bonding technology ensures exceptional material integrity',
-            fa: 'فناوری پیشرفته پیوند حرارتی یکپارچگی استثنایی مواد را تضمین می‌کند'
+            en: 'Provides strength while giving appropriate shaping to garments',
+            fa: 'استحکام و فرم‌دهی مناسب به لباس ارائه می‌دهد'
           }
         },
         {
           title: {
-            en: 'Versatile Applications',
-            fa: 'کاربردهای متنوع'
+            en: 'Fabric Compatibility',
+            fa: 'سازگاری با پارچه'
           },
           description: {
-            en: 'Suitable for various industrial applications including automotive and construction',
-            fa: 'مناسب برای کاربردهای مختلف صنعتی از جمله خودرو و ساختمان'
+            en: 'Well-compatible with various fabrics in the sewing process',
+            fa: 'سازگاری عالی با انواع پارچه‌ها در فرآیند دوخت'
           }
         },
         {
           title: {
-            en: 'High Performance',
-            fa: 'عملکرد بالا'
+            en: 'Smooth Surface',
+            fa: 'سطح صاف'
           },
           description: {
-            en: 'Excellent dimensional stability and mechanical properties',
-            fa: 'پایداری ابعادی و خواص مکانیکی عالی'
+            en: 'Creates a smooth surface ideal for embroidery work',
+            fa: 'ایجاد سطح صاف ایده‌آل برای کار گلدوزی'
           }
         }
       ]
@@ -86,104 +86,81 @@ export default function Thermobonding() {
       items: [
         {
           label: {
-            en: 'Weight Range',
-            fa: 'محدوده وزن'
+            en: 'Material Type',
+            fa: 'نوع مواد'
           },
-          value: '30-500 g/m²'
+          value: 'Needle-Punched Fusible'
         },
         {
           label: {
-            en: 'Width',
-            fa: 'عرض'
+            en: 'Application',
+            fa: 'کاربرد'
           },
-          value: 'Up to 3.2 meters'
+          value: 'Clothing & Embroidery'
         },
         {
           label: {
-            en: 'Temperature Resistance',
-            fa: 'مقاومت در برابر دما'
+            en: 'Compatibility',
+            fa: 'سازگاری'
           },
-          value: '-40°C to +150°C'
+          value: 'Various Fabrics'
         },
         {
           label: {
-            en: 'Bonding Strength',
-            fa: 'استحکام پیوند'
+            en: 'Surface Quality',
+            fa: 'کیفیت سطح'
+          },
+          value: 'Smooth'
+        },
+        {
+          label: {
+            en: 'Shaping Capability',
+            fa: 'قابلیت فرم‌دهی'
+          },
+          value: 'Excellent'
+        },
+        {
+          label: {
+            en: 'Strength',
+            fa: 'استحکام'
           },
           value: 'High'
-        },
-        {
-          label: {
-            en: 'Color Options',
-            fa: 'گزینه‌های رنگ'
-          },
-          value: 'Customizable'
-        },
-        {
-          label: {
-            en: 'Material Composition',
-            fa: 'ترکیب مواد'
-          },
-          value: 'Synthetic Fibers'
         }
       ]
     },
-    gallery: {
+    applications: {
       title: {
-        en: 'Product Gallery',
-        fa: 'گالری محصول'
+        en: 'Applications',
+        fa: 'کاربردها'
       },
-      images: [
+      items: [
         {
-          title: {
-            en: 'High-Performance Material',
-            fa: 'ماده با عملکرد بالا'
-          }
+          en: 'Clothing Industry',
+          fa: 'صنعت پوشاک'
         },
         {
-          title: {
-            en: 'Industrial Application',
-            fa: 'کاربرد صنعتی'
-          }
+          en: 'Garment Manufacturing',
+          fa: 'تولید پوشاک'
         },
         {
-          title: {
-            en: 'Quality Testing',
-            fa: 'آزمایش کیفیت'
-          }
+          en: 'Embroidery',
+          fa: 'گلدوزی'
         },
         {
-          title: {
-            en: 'Manufacturing Process',
-            fa: 'فرآیند تولید'
-          }
+          en: 'Doll Production',
+          fa: 'تولید عروسک'
+        },
+        {
+          en: 'Textile Processing',
+          fa: 'پردازش منسوجات'
+        },
+        {
+          en: 'Sewing Applications',
+          fa: 'کاربردهای دوخت'
         }
       ]
     }
   };
-
-  const images = [
-    {
-      src: '/images/products/thermobonding/1.jpg',
-      alt: 'Thermobonding Product 1',
-      title: translations.gallery.images[0].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/2.jpg',
-      alt: 'Thermobonding Product 2',
-      title: translations.gallery.images[1].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/3.jpg',
-      alt: 'Thermobonding Product 3',
-      title: translations.gallery.images[2].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/4.jpg',
-      alt: 'Thermobonding Product 4',
-      title: translations.gallery.images[3].title[language]
-    }
-  ]
 
   return (
     <div className="bg-laeisaz-background">
@@ -260,8 +237,8 @@ export default function Thermobonding() {
             <AnimateOnScroll className="delay-200">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/products/thermobonding/main.jpg"
-                  alt="Thermobonding Material"
+                  src="/images/products/fusible-interfacing.jpg"
+                  alt="Fusible Interfacing Material"
                   fill
                   className="object-cover"
                 />
@@ -284,8 +261,8 @@ export default function Thermobonding() {
               <AnimateOnScroll key={index} className={`delay-${(index + 1) * 200}`}>
                 <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                   <div className="text-4xl mb-4 text-laeisaz-title flex justify-center">
-                    <FaFire className={index === 0 ? 'block' : 'hidden'} />
-                    <FaIndustry className={index === 1 ? 'block' : 'hidden'} />
+                    <FaIndustry className={index === 0 ? 'block' : 'hidden'} />
+                    <FaCogs className={index === 1 ? 'block' : 'hidden'} />
                     <FaChartLine className={index === 2 ? 'block' : 'hidden'} />
                   </div>
                   <h3 className="text-xl font-bold text-laeisaz-title mb-4">{feature.title[language]}</h3>
@@ -321,6 +298,27 @@ export default function Thermobonding() {
           </div>
         </div>
       </section>
+
+      {/* Applications */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimateOnScroll>
+            <h2 className="text-3xl font-bold text-laeisaz-title text-center mb-16">
+              {translations.applications.title[language]}
+            </h2>
+          </AnimateOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {translations.applications.items.map((application, index) => (
+              <AnimateOnScroll key={index} className={`delay-${index * 100}`}>
+                <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                  <h3 className="text-xl font-bold text-laeisaz-title">{application[language]}</h3>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
-} 
+}
+

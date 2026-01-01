@@ -4,22 +4,22 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimateOnScroll from '../../components/AnimateOnScroll'
-import { FaFire, FaIndustry, FaChartLine, FaCheck } from 'react-icons/fa'
+import { FaIndustry, FaCogs, FaChartLine } from 'react-icons/fa'
 import { useLanguage } from '../../components/ClientLayout'
 
-export default function Thermobonding() {
+export default function Laminated() {
   const { language } = useLanguage();
   const [isExpanded, setIsExpanded] = useState(false);
 
   const translations = {
     hero: {
       title: {
-        en: 'Thermobonding Materials',
-        fa: 'مواد ترموباندینگ'
+        en: 'Laminated Nonwoven',
+        fa: 'لایی لمینت'
       },
       description: {
-        en: 'High-performance thermally bonded nonwoven materials for demanding industrial applications',
-        fa: 'مواد نبافته ترموباندینگ با عملکرد بالا برای کاربردهای صنعتی چالش‌برانگیز'
+        en: 'Advanced laminated nonwoven materials for medical and industrial applications',
+        fa: 'مواد نبافته لمینت پیشرفته برای کاربردهای پزشکی و صنعتی'
       }
     },
     overview: {
@@ -28,8 +28,8 @@ export default function Thermobonding() {
         fa: 'معرفی محصول'
       },
       description: {
-        en: 'It is considered one of the important subcategories in the nonwoven textiles industry, produced using polypropylene or polyester fibers. Depending on customer needs, this product has the capability to undergo supplementary operations such as coating and impregnation. Thermobond felts have wide applications in various industries in different grammages.',
-        fa: 'از زیرمجموعه‌های مهم در صنعت منسوجات نبافته محسوب می‌شود که با استفاده از الیاف پلی‌پروپیلن یا پلی‌استر تولید می‌گردد. این محصول بسته به نیاز مشتری، قابلیت انجام عملیات تکمیلی نظیر کوتینگ (Coating)  و آغشته‌سازی را دارد. لایی ترموباند در گرماژهای مختلف، کاربرد گسترده‌ای در صنایع گوناگون دارد'
+        en: 'The lamination process enables nonwoven textiles to be combined with various reinforcing layers and different additives, producing products with specific characteristics for diverse medical and industrial applications. This process not only increases the efficiency of nonwoven textiles but also significantly expands their range of applications.\n\nLaeisaz Industrial Company, utilizing the most modern and advanced fully automatic machinery from Germany, Italy, and Switzerland, has succeeded in producing a wide range of nonwoven textiles to meet the needs of various industries. Among these products, thermobonding felts and laminated felts play a special role in the medical industry. These products, with features such as:\n• Effective body moisture absorption: helping to maintain dryness and patient comfort during use\n• Soft and flexible: compatible with body movements, without causing sensitivity or abrasion\n• Cost-effective: an economical option for widespread use in medical centers\n• Reduced thermal stress: preventing heat accumulation and increasing thermal comfort\n• High resistance to liquid penetration: especially against blood and other body fluids\n• Capability of heat and moisture exchange: appropriate breathability to maintain thermal balance and prevent sweating\n• Protection against pathogen penetration: an effective barrier against various microbes and transmissible infectious contaminants\n• Capability of lamination with protective layers\nare considered an ideal option for producing various medical equipment and textiles.',
+        fa: 'فرآیند لمینت‌سازی این امکان را فراهم می‌کند تا منسوجات نبافته با انواع لایه‌های تقویتی و افزودنی‌های مختلف ترکیب شوند و محصولاتی با ویژگی‌های خاص برای کاربردهای متنوع پزشکی و صنعتی تولید گردد. این فرآیند نه تنها موجب افزایش کارایی منسوجات نبافته می‌شود، بلکه دامنه‌ی کاربرد آن‌ها را نیز به‌طور چشم‌گیری گسترش می‌دهد.\n\nشرکت صنعتی لایی‌ساز با بهره‌گیری از مدرن‌ترین و پیشرفته‌ترین ماشین‌آلات تمام‌اتوماتیک ساخت آلمان، ایتالیا و سوئیس، موفق به تولید طیف گسترده‌ای از منسوجات نبافته برای پاسخ‌گویی به نیاز صنایع مختلف شده است. در میان این محصولات، لایی‌های ترموباندینگ و لایی‌های لمینت نقش ویژه‌ای در صنعت پزشکی ایفا می‌کنند. این محصولات با دارا بودن ویژگی‌هایی چون:\n• جذب مؤثر رطوبت بدن: کمک به حفظ خشکی و راحتی بیمار در طول مدت استفاده\n• نرم و انعطاف‌پذیر: سازگار با حرکات بدن، بدون ایجاد حساسیت یا سایش\n• مقرون‌به‌صرفه: گزینه‌ای اقتصادی برای استفاده گسترده در مراکز درمانی\n• کاهش تنش گرمایی: جلوگیری از تجمع گرما و افزایش سایش حرارتی\n• مقاومت بالا در برابر نفوذ مایعات: به‌ویژه در برابر خون و سایر مایعات بدن\n• قابلیت تبادل گرما و رطوبت: تنفس‌پذیری مناسب برای حفظ تعادل دمایی و جلوگیری از تعریق\n• محافظت در برابر نفوذ عوامل بیماری‌زا: مانعی مؤثر در برابر انواع میکروب‌ها و آلودگی‌های عفونی قابل انتقال\n• قابلیت لمینت با لایه‌های محافظ\nگزینه‌ای ایده‌آل برای تولید انواع تجهیزات و منسوجات پزشکی به‌شمار می‌آیند'
       },
       readMore: {
         en: 'Read More',
@@ -48,12 +48,22 @@ export default function Thermobonding() {
       items: [
         {
           title: {
-            en: 'Superior Bonding',
-            fa: 'پیوند برتر'
+            en: 'Medical Grade',
+            fa: 'درجه پزشکی'
           },
           description: {
-            en: 'Advanced thermal bonding technology ensures exceptional material integrity',
-            fa: 'فناوری پیشرفته پیوند حرارتی یکپارچگی استثنایی مواد را تضمین می‌کند'
+            en: 'High-quality materials suitable for medical applications',
+            fa: 'مواد با کیفیت بالا مناسب برای کاربردهای پزشکی'
+          }
+        },
+        {
+          title: {
+            en: 'Protective Barrier',
+            fa: 'سد محافظتی'
+          },
+          description: {
+            en: 'Effective protection against pathogens and contaminants',
+            fa: 'محافظت مؤثر در برابر عوامل بیماری‌زا و آلودگی‌ها'
           }
         },
         {
@@ -62,18 +72,8 @@ export default function Thermobonding() {
             fa: 'کاربردهای متنوع'
           },
           description: {
-            en: 'Suitable for various industrial applications including automotive and construction',
-            fa: 'مناسب برای کاربردهای مختلف صنعتی از جمله خودرو و ساختمان'
-          }
-        },
-        {
-          title: {
-            en: 'High Performance',
-            fa: 'عملکرد بالا'
-          },
-          description: {
-            en: 'Excellent dimensional stability and mechanical properties',
-            fa: 'پایداری ابعادی و خواص مکانیکی عالی'
+            en: 'Suitable for various medical and industrial uses',
+            fa: 'مناسب برای کاربردهای مختلف پزشکی و صنعتی'
           }
         }
       ]
@@ -86,104 +86,81 @@ export default function Thermobonding() {
       items: [
         {
           label: {
-            en: 'Weight Range',
-            fa: 'محدوده وزن'
+            en: 'Material Type',
+            fa: 'نوع مواد'
           },
-          value: '30-500 g/m²'
+          value: 'Laminated Nonwoven'
         },
         {
           label: {
-            en: 'Width',
-            fa: 'عرض'
+            en: 'Applications',
+            fa: 'کاربردها'
           },
-          value: 'Up to 3.2 meters'
+          value: 'Medical & Industrial'
         },
         {
           label: {
-            en: 'Temperature Resistance',
-            fa: 'مقاومت در برابر دما'
-          },
-          value: '-40°C to +150°C'
-        },
-        {
-          label: {
-            en: 'Bonding Strength',
-            fa: 'استحکام پیوند'
+            en: 'Protection Level',
+            fa: 'سطح محافظت'
           },
           value: 'High'
         },
         {
           label: {
-            en: 'Color Options',
-            fa: 'گزینه‌های رنگ'
+            en: 'Breathability',
+            fa: 'تنفس‌پذیری'
           },
-          value: 'Customizable'
+          value: 'Excellent'
         },
         {
           label: {
-            en: 'Material Composition',
-            fa: 'ترکیب مواد'
+            en: 'Liquid Resistance',
+            fa: 'مقاومت در برابر مایعات'
           },
-          value: 'Synthetic Fibers'
+          value: 'High'
+        },
+        {
+          label: {
+            en: 'Customization',
+            fa: 'سفارشی‌سازی'
+          },
+          value: 'Available'
         }
       ]
     },
-    gallery: {
+    applications: {
       title: {
-        en: 'Product Gallery',
-        fa: 'گالری محصول'
+        en: 'Applications',
+        fa: 'کاربردها'
       },
-      images: [
+      items: [
         {
-          title: {
-            en: 'High-Performance Material',
-            fa: 'ماده با عملکرد بالا'
-          }
+          en: 'Medical Equipment',
+          fa: 'تجهیزات پزشکی'
         },
         {
-          title: {
-            en: 'Industrial Application',
-            fa: 'کاربرد صنعتی'
-          }
+          en: 'Surgical Gowns',
+          fa: 'گون‌های جراحی'
         },
         {
-          title: {
-            en: 'Quality Testing',
-            fa: 'آزمایش کیفیت'
-          }
+          en: 'Medical Masks',
+          fa: 'ماسک‌های پزشکی'
         },
         {
-          title: {
-            en: 'Manufacturing Process',
-            fa: 'فرآیند تولید'
-          }
+          en: 'Protective Clothing',
+          fa: 'لباس‌های محافظتی'
+        },
+        {
+          en: 'Industrial Filters',
+          fa: 'فیلترهای صنعتی'
+        },
+        {
+          en: 'Hygiene Products',
+          fa: 'محصولات بهداشتی'
         }
       ]
     }
   };
-
-  const images = [
-    {
-      src: '/images/products/thermobonding/1.jpg',
-      alt: 'Thermobonding Product 1',
-      title: translations.gallery.images[0].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/2.jpg',
-      alt: 'Thermobonding Product 2',
-      title: translations.gallery.images[1].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/3.jpg',
-      alt: 'Thermobonding Product 3',
-      title: translations.gallery.images[2].title[language]
-    },
-    {
-      src: '/images/products/thermobonding/4.jpg',
-      alt: 'Thermobonding Product 4',
-      title: translations.gallery.images[3].title[language]
-    }
-  ]
 
   return (
     <div className="bg-laeisaz-background">
@@ -260,8 +237,8 @@ export default function Thermobonding() {
             <AnimateOnScroll className="delay-200">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/products/thermobonding/main.jpg"
-                  alt="Thermobonding Material"
+                  src="/images/products/laminated-nonwoven.jpg"
+                  alt="Laminated Nonwoven Material"
                   fill
                   className="object-cover"
                 />
@@ -284,8 +261,8 @@ export default function Thermobonding() {
               <AnimateOnScroll key={index} className={`delay-${(index + 1) * 200}`}>
                 <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                   <div className="text-4xl mb-4 text-laeisaz-title flex justify-center">
-                    <FaFire className={index === 0 ? 'block' : 'hidden'} />
-                    <FaIndustry className={index === 1 ? 'block' : 'hidden'} />
+                    <FaIndustry className={index === 0 ? 'block' : 'hidden'} />
+                    <FaCogs className={index === 1 ? 'block' : 'hidden'} />
                     <FaChartLine className={index === 2 ? 'block' : 'hidden'} />
                   </div>
                   <h3 className="text-xl font-bold text-laeisaz-title mb-4">{feature.title[language]}</h3>
@@ -321,6 +298,27 @@ export default function Thermobonding() {
           </div>
         </div>
       </section>
+
+      {/* Applications */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimateOnScroll>
+            <h2 className="text-3xl font-bold text-laeisaz-title text-center mb-16">
+              {translations.applications.title[language]}
+            </h2>
+          </AnimateOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {translations.applications.items.map((application, index) => (
+              <AnimateOnScroll key={index} className={`delay-${index * 100}`}>
+                <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                  <h3 className="text-xl font-bold text-laeisaz-title">{application[language]}</h3>
+                </div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   )
-} 
+}
+

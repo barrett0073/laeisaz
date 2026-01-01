@@ -196,11 +196,14 @@ const Navbar = () => {
       name: { en: 'Products', fa: 'محصولات' },
       path: '/products',
       submenu: [
-        { name: { en: 'Thermobonding', fa: 'ترموباندینگ' }, path: '/products/thermobonding' },
         { name: { en: 'Needle Punched Felt', fa: 'لایی سوزنی' }, path: '/products/needle-punched-felt' },
+        { name: { en: 'Thermobonding', fa: 'ترموباندینگ' }, path: '/products/thermobonding' },
         { name: { en: 'Interlining', fa: 'لایی چسب' }, path: '/products/interlining' },
         { name: { en: 'Thermo Fuse', fa: 'لایی ترموفیوز' }, path: '/products/thermo-fuse' },
         { name: { en: 'Coating', fa: 'لایی کوتینگ' }, path: '/products/coating' },
+        { name: { en: 'Laminated', fa: 'لایی لمینت' }, path: '/products/laminated' },
+        { name: { en: 'Synthetic', fa: 'لایی سنتتیک' }, path: '/products/synthetic' },
+        { name: { en: 'Fusible Interfacing', fa: 'لایی چسب سوزنی' }, path: '/products/fusible-interfacing' },
       ]
     },
     {

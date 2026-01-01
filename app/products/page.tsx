@@ -91,7 +91,9 @@ export default function Products() {
       coating: { en: 'Coating', fa: 'لایی کوتینگ' },
       interlining: { en: 'Interlining', fa: 'لایی چسب' },
       thermobonding: { en: 'Thermobonding', fa: 'ترموباندینگ' },
-
+      laminated: { en: 'Laminated', fa: 'لایی لمینت' },
+      synthetic: { en: 'Synthetic', fa: 'لایی سنتتیک' },
+      'fusible-interfacing': { en: 'Fusible Interfacing', fa: 'لایی چسب سوزنی' },
     },
     sortOptions: {
       name: { en: 'Name', fa: 'نام' },
@@ -223,6 +225,72 @@ export default function Products() {
       features: {
         en: ['Superior Bonding Strength', 'Excellent Recovery', 'Thermal Stability', 'Consistent Quality'],
         fa: ['استحکام پیوند برتر', 'بازیابی عالی', 'پایداری حرارتی', 'کیفیت یکنواخت']
+      }
+    },
+    {
+      id: 'laminated',
+      name: {
+        en: 'Laminated',
+        fa: 'لایی لمینت'
+      },
+      description: {
+        en: 'Advanced laminated nonwoven materials for medical and industrial applications with protective barriers.',
+        fa: 'مواد نبافته لمینت پیشرفته برای کاربردهای پزشکی و صنعتی با سدهای محافظتی'
+      },
+      image: '/images/products/laminated-nonwoven.jpg',
+      href: '/products/laminated',
+      productCount: 1,
+      applications: {
+        en: ['Medical Equipment', 'Surgical Gowns', 'Protective Clothing', 'Industrial Filters'],
+        fa: ['تجهیزات پزشکی', 'گون‌های جراحی', 'لباس‌های محافظتی', 'فیلترهای صنعتی']
+      },
+      features: {
+        en: ['Medical Grade', 'Protective Barrier', 'Liquid Resistance', 'Breathability'],
+        fa: ['درجه پزشکی', 'سد محافظتی', 'مقاومت در برابر مایعات', 'تنفس‌پذیری']
+      }
+    },
+    {
+      id: 'synthetic',
+      name: {
+        en: 'Synthetic',
+        fa: 'لایی سنتتیک'
+      },
+      description: {
+        en: 'Advanced synthetic felt with high resistance, softness, and superior formability for footwear and bag manufacturing.',
+        fa: 'نمد پیشرفته سنتتیک با مقاومت بالا، نرمی و فرم‌پذیری برتر برای تولید کفش و کیف'
+      },
+      image: '/images/products/synthetic-felt.jpg',
+      href: '/products/synthetic',
+      productCount: 1,
+      applications: {
+        en: ['Military Shoes', 'Safety Shoes', 'Sandals', 'Seamless Bags'],
+        fa: ['کفش‌های نظامی', 'کفش‌های ایمنی', 'صندل‌ها', 'کیف‌های یکپارچه']
+      },
+      features: {
+        en: ['High Resistance', 'Superior Formability', 'Double-Sided', 'No Lint & Odor'],
+        fa: ['مقاومت بالا', 'فرم‌پذیری برتر', 'دو رو', 'بدون پرز و بو']
+      }
+    },
+    {
+      id: 'fusible-interfacing',
+      name: {
+        en: 'Fusible Interfacing',
+        fa: 'لایی چسب سوزنی'
+      },
+      description: {
+        en: 'Specialized needle-punched fusible interfacing for clothing and embroidery applications with excellent fabric compatibility.',
+        fa: 'لایی چسب سوزنی تخصصی برای کاربردهای پوشاک و گلدوزی با سازگاری عالی با پارچه'
+      },
+      image: '/images/products/fusible-interfacing.jpg',
+      href: '/products/fusible-interfacing',
+      productCount: 1,
+      applications: {
+        en: ['Clothing Industry', 'Embroidery', 'Doll Production', 'Garment Manufacturing'],
+        fa: ['صنعت پوشاک', 'گلدوزی', 'تولید عروسک', 'تولید پوشاک']
+      },
+      features: {
+        en: ['Strength & Shaping', 'Fabric Compatibility', 'Smooth Surface', 'Embroidery Ready'],
+        fa: ['استحکام و فرم‌دهی', 'سازگاری با پارچه', 'سطح صاف', 'آماده گلدوزی']
       }
     }
   ]
