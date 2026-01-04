@@ -260,7 +260,7 @@ export default function Thermobonding() {
             <AnimateOnScroll className="delay-200">
               <div className="relative h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/images/products/thermobonding/main.jpg"
+                  src="/images/products/thermobonding.jpg"
                   alt="Thermobonding Material"
                   fill
                   className="object-cover"
